@@ -27,6 +27,4 @@
         <jar destfile="${jar.dir}/${ant.project.name}.jar" basedir="${classes.dir}"/>
     </target>
 
-    <target name="clean-build" depends="clean,jar"/>
-
 </project>
