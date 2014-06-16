@@ -29,15 +29,13 @@
                 <artifactId>maven-compiler-plugin</artifactId>
                 <version>2.3.2</version>
             </plugin>
-            <!--checkstyle:check-->
+            <!--verify-->
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-checkstyle-plugin</artifactId>
                 <version>2.12.1</version>
                 <executions>
                     <execution>
-                        <id>validate</id>
-                        <phase>validate</phase>
                         <configuration>
                             <configLocation>config/checkstyle/checkstyle.xml</configLocation>
                             <consoleOutput>true</consoleOutput>
@@ -49,8 +47,30 @@
                     </execution>
                 </executions>
             </plugin>
-            <!--findbugs:check-->
-            <!--pmd:check-->
+            <plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>findbugs-maven-plugin</artifactId>
+                <version>2.5.4</version>
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>check</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-pmd-plugin</artifactId>
+                <version>3.1</version>
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>check</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
         </plugins>
     </build>
 
